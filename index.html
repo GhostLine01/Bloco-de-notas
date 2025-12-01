@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Meu Notepad</title>
+<style>
+body { font-family: Arial; margin: 20px; }
+textarea { width: 100%; height: 300px; }
+button { margin-top: 10px; padding: 10px; }
+</style>
+</head>
+<body>
+<h1>Notas Online</h1>
+<textarea id="nota"></textarea><br>
+<button onclick="salvar()">Salvar Nota</button>
+
+<script>
+function salvar() {
+    const texto = document.getElementById('nota').value;
+    localStorage.setItem('minhaNota', texto);
+    alert('Nota salva!');
+}
+
+document.getElementById('nota').value = localStorage.getItem('minhaNota') || '';
+</script>
+</body>
+</html>
